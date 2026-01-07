@@ -13,7 +13,19 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // 1. Create a new array of doubles with the specified length.
+        // 2. Use a for loop to iterate from 0 to length - 1
+        // 3. In each iteration, calculate the multiple by multiplying the number with (i + 1) and store it in the array at index i.
+        // 4. After the loop, return the filled array.
+
+        double[] result = new double[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            result[i] = number * (i + 1);
+        }
+
+        return result; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +41,25 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // 1. Determine the length of the list.
+        // 2. Create a new list to hold the rotated values. 
+        // 3. Use a for loop to iterate through the original list.
+        // 4. For each index, calculate the new index by adding the amount and using modulo operation with the length of the list.
+        // 5. Place the value from the original list into the new list at the calculated index.
+        // 6. After the loop, copy the values from the new list back to the original list.
+    
+        int length = data.Count;
+        List<int> rotated = new List<int>(new int[length]);
+        for (int i = 0; i < length; i++)
+        {
+            int newIndex = (i + amount) % length;
+            rotated[newIndex] = data[i];
+        }
+        for (int i = 0; i < length; i++)
+        {
+            data[i] = rotated[i];
+        }
+
     }
 }
